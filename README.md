@@ -1,73 +1,135 @@
-# Welcome to your Lovable project
+# Vomo - Volunteer & Event Organizer Tool
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/6efee333-3c3b-4a80-9d26-11b2f278e460
+Vomo is a simple, mobile-friendly volunteer and event scheduling tool designed for small nonprofits, schools, and community organizations. The MVP allows event organizers to create events, publish volunteer shifts, allow volunteers to sign up without accounts, and automate shift reminders.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Event management with title, description, location, and date
+- Shift scheduling with customizable roles and time slots
+- Public sign-up links for volunteers (no account required)
+- Automated email confirmations and reminders
+- Organizer dashboard for managing volunteers and events
+- CSV export for volunteer data
+- Mobile-first responsive design
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/6efee333-3c3b-4a80-9d26-11b2f278e460) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Tech Stack
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Frontend:** React 18 + TypeScript
+- **Build Tool:** Vite
+- **UI Components:** shadcn/ui with Tailwind CSS (Emerald theme)
+- **Backend:** Supabase (PostgreSQL + Auth)
+- **Email Service:** Resend
+- **Forms:** React Hook Form + Zod validation
+- **State Management:** TanStack React Query
+- **Routing:** React Router DOM
+- **Hosting:** Vercel
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/6efee333-3c3b-4a80-9d26-11b2f278e460) and click on Share -> Publish.
+### Prerequisites
 
-## Can I connect a custom domain to my Lovable project?
+- Node.js 18+ & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Supabase account and project
+- Resend account for email notifications
 
-Yes, you can!
+### Installation
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```sh
+# Clone the repository
+git clone <YOUR_GIT_URL>
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Navigate to the project directory
+cd vomo
+
+# Install dependencies
+npm install
+
+# Create .env.local file with your credentials
+cp .env.example .env.local
+
+# Start the development server
+npm run dev
+```
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_RESEND_API_KEY=your_resend_api_key
+```
+
+## Development
+
+```sh
+# Start development server with hot reload
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linter
+npm run lint
+```
+
+## Project Structure
+
+```
+vomo/
+├── src/
+│   ├── components/       # Reusable UI components
+│   │   ├── ui/          # shadcn/ui components
+│   │   ├── dashboard/   # Dashboard-specific components
+│   │   ├── forms/       # Form components
+│   │   └── public/      # Public-facing components
+│   ├── contexts/        # React contexts (Auth, etc.)
+│   ├── hooks/           # Custom React hooks
+│   ├── layouts/         # Layout components
+│   ├── lib/             # Utilities and configurations
+│   ├── pages/           # Page components
+│   ├── templates/       # Email templates
+│   └── App.tsx          # Main app component
+├── supabase/
+│   └── migrations/      # Database migrations
+└── public/              # Static assets
+```
+
+## Deployment
+
+### Vercel Deployment
+
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy
+
+### Supabase Setup
+
+1. Create a Supabase project
+2. Run database migrations from `supabase/migrations/`
+3. Configure Row Level Security (RLS) policies
+4. Set up authentication providers
+5. Deploy edge functions for automated reminders
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details
+
+## Support
+
+For issues and questions, please open an issue on GitHub.
