@@ -77,7 +77,7 @@ export default function Dashboard() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-start space-x-4">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
               1
             </div>
             <div className="flex-1">
@@ -89,7 +89,7 @@ export default function Dashboard() {
           </div>
 
           <div className="flex items-start space-x-4">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
               2
             </div>
             <div className="flex-1">
@@ -101,7 +101,7 @@ export default function Dashboard() {
           </div>
 
           <div className="flex items-start space-x-4">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
               3
             </div>
             <div className="flex-1">

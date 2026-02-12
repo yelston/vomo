@@ -49,8 +49,8 @@ export default function DashboardLayout() {
     <div className="flex flex-col h-full">
       <div className="flex items-center justify-center h-16 border-b px-4">
         <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 bg-emerald-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold">V</span>
+          <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
+            <span className="text-primary-foreground font-bold">V</span>
           </div>
           <span className="text-xl font-bold">Vomo</span>
         </div>
@@ -66,8 +66,8 @@ export default function DashboardLayout() {
               onClick={() => setSidebarOpen(false)}
               className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
                 isActive
-                  ? 'bg-emerald-100 text-emerald-900'
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? 'bg-primary/10 text-primary font-medium'
+                  : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
               }`}
             >
               <item.icon className="h-5 w-5" />
@@ -78,7 +78,7 @@ export default function DashboardLayout() {
       </nav>
 
       <div className="p-4 border-t">
-        <p className="text-xs text-gray-500 text-center">
+        <p className="text-xs text-muted-foreground text-center">
           Made with Vomo
         </p>
       </div>
@@ -86,10 +86,10 @@ export default function DashboardLayout() {
   );
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-background">
       {/* Desktop Sidebar */}
       <div className="hidden md:flex md:w-64 md:flex-col">
-        <div className="flex flex-col flex-1 bg-white border-r">
+        <div className="flex flex-col flex-1 bg-background border-r">
           <SidebarContent />
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function DashboardLayout() {
       {/* Main Content */}
       <div className="flex flex-col flex-1 overflow-hidden">
         {/* Top Navigation */}
-        <header className="bg-white border-b">
+        <header className="bg-background border-b">
           <div className="flex items-center justify-between h-16 px-4">
             <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
               <SheetTrigger asChild>

@@ -1,71 +1,48 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Upload, Search, MessageSquare } from "lucide-react";
+import { CalendarPlus, Users, ClipboardCheck } from "lucide-react";
 
 const steps = [
   {
-    icon: Upload,
-    title: "Post Your Project",
-    description: "Submit your product for testing with clear requirements and access details. Active members can post monthly.",
-    color: "text-primary"
+    icon: CalendarPlus,
+    label: "Step 1",
+    title: "Create Your Event",
+    description: "Set up your event with details, location, date, and time. Define the shifts and roles you need volunteers for."
   },
   {
-    icon: Search,
-    title: "Test Others' Products",
-    description: "Browse available projects and provide thoughtful feedback. Test monthly to maintain your active status.",
-    color: "text-secondary"
+    icon: Users,
+    label: "Step 2",
+    title: "Invite Volunteers",
+    description: "Share your event link with volunteers. They can browse available shifts and sign up for roles that fit their schedule."
   },
   {
-    icon: MessageSquare,
-    title: "Receive Quality Feedback",
-    description: "Get detailed insights from real users to improve your product. Build lasting community connections.",
-    color: "text-accent"
+    icon: ClipboardCheck,
+    label: "Step 3",
+    title: "Manage & Track",
+    description: "Monitor volunteer signups in real-time, send reminders, and keep everything organized from your dashboard."
   }
 ];
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 px-4 bg-muted/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">How TestCircle Works</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A simple three-step process that creates meaningful testing relationships
-            and builds a thriving community of makers.
+    <section id="how-it-works" className="py-16 md:py-20 px-4">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight">How Vomo Works</h2>
+          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+            A simple three-step process that makes volunteer coordination effortless.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
-            <Card key={step.title} className="relative bg-gradient-card shadow-soft hover:shadow-hover transition-all duration-300 border-0">
-              <CardContent className="p-8 text-center">
-                {/* Step number */}
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
-                  {index + 1}
-                </div>
-                
-                {/* Icon */}
-                <div className={`${step.color} mb-6 flex justify-center`}>
-                  <step.icon className="h-12 w-12" />
-                </div>
-                
-                {/* Content */}
-                <h3 className="text-2xl font-semibold mb-4">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </CardContent>
-            </Card>
+        <div className="grid md:grid-cols-3 gap-6">
+          {steps.map((step) => (
+            <div key={step.title} className="rounded-lg border bg-card p-6">
+              <span className="text-sm font-medium text-muted-foreground">{step.label}</span>
+              <step.icon className="h-5 w-5 text-primary mt-3" />
+              <h3 className="font-semibold mt-3">{step.title}</h3>
+              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
           ))}
-        </div>
-
-        {/* Community callout */}
-        <div className="mt-16 text-center bg-white rounded-2xl p-8 shadow-soft">
-          <h3 className="text-2xl font-semibold mb-4">Built on Reciprocity</h3>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            TestCircle thrives because everyone contributes. By testing others' products, 
-            you earn the right to have your own tested. This creates a self-sustaining 
-            community where quality feedback flows both ways.
-          </p>
         </div>
       </div>
     </section>

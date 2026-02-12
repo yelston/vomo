@@ -70,10 +70,6 @@ export default {
         serif: "var(--font-serif)",
         mono: "var(--font-mono)",
       },
-      backgroundImage: {
-        'gradient-hero': 'var(--gradient-hero)',
-        'gradient-card': 'var(--gradient-card)',
-      },
       boxShadow: {
         '2xs': 'var(--shadow-2xs)',
         'xs': 'var(--shadow-xs)',
@@ -83,8 +79,6 @@ export default {
         'lg': 'var(--shadow-lg)',
         'xl': 'var(--shadow-xl)',
         '2xl': 'var(--shadow-2xl)',
-        'soft': 'var(--shadow-soft)',
-        'hover': 'var(--shadow-hover)',
       },
       borderRadius: {
         lg: "var(--radius)",
